@@ -29,7 +29,7 @@ public class FloatingTextManager : MonoBehaviour
     {
         FloatingText txt = floatingTexts.Find(t => !t.active); // find inactive text 
 
-        // create new FloatingText if none in the list is active
+        // create new FloatingText if none in the list is inactive and add to list. this is so that multiple text instances can appear at once
         if (txt == null)
         {
             txt = new FloatingText();
