@@ -17,6 +17,17 @@ public class Weapon : Collidable
     private float cooldown = 0.25f;
     private float lastSwing; // Takes Time
 
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+        anim = GetComponent<Animator>();
+    }
+
     public void UpgradeWeapon()
     {
         weaponLevel++;
@@ -27,12 +38,6 @@ public class Weapon : Collidable
     {
         weaponLevel = level;
         spriteRenderer.sprite = GameManager.instance.weaponSprites[weaponLevel];
-    }
-
-    protected override void Start()
-    {
-        base.Start();
-        anim = GetComponent<Animator>();
     }
 
     protected override void Update()
@@ -66,11 +71,6 @@ public class Weapon : Collidable
 
             coll.SendMessage("ReceiveDamage", dmg); // Calls the Fighter ReceiveDamage(dmg) function
         }
-    }
-
-    private void Awake()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Swing()

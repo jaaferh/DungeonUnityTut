@@ -42,6 +42,7 @@ public class CharacterMenu : MonoBehaviour
     private void OnSelectionChange()
     {
         characterSelectionSprite.sprite = GameManager.instance.playerSprites[currentCharacterSelection];
+        GameManager.instance.player.SwapSprite(currentCharacterSelection);
     }
 
     // Weapon Upgrade
@@ -57,8 +58,9 @@ public class CharacterMenu : MonoBehaviour
     public void UpdateMenu()
     {
         // Weapon
-        var weaponLevel = GameManager.instance.weapon.weaponLevel;
-        var maxWeaponLvl = GameManager.instance.weapon.weaponLevel == GameManager.instance.weaponPrices.Count;
+        int weaponLevel = GameManager.instance.weapon.weaponLevel;
+        bool maxWeaponLvl = GameManager.instance.weapon.weaponLevel == GameManager.instance.weaponPrices.Count;
+
         weaponSprite.sprite = GameManager.instance.weaponSprites[weaponLevel];
         if (maxWeaponLvl)
             upgradeCostText.text = "MAX";
@@ -66,12 +68,30 @@ public class CharacterMenu : MonoBehaviour
             upgradeCostText.text = GameManager.instance.weaponPrices[weaponLevel].ToString();
 
         // Meta
-        levelText.text = "NOT IMPLEMENTED";
+        levelText.text = GameManager.instance.GetCurrentLevel().ToString();
         hitpointText.text = GameManager.instance.player.hitpoint.ToString();
         pesosText.text = GameManager.instance.pesos.ToString();
 
         // XP Bar
-        xpText.text = "NOT IMPLEMENTED";
-        xpBar.localScale = new Vector3(0.5f, 0, 0); // 0.5 for the X scale value
+        int currLevel = GameManager.instance.GetCurrentLevel();
+        bool maxXpLevel = currLevel == GameManager.instance.xpTable.Count;
+
+        if (maxWeaponLvl)
+        {
+            xpText.text = GameManager.instance.experience.ToString() + " total experience points"; // Display total XP
+            xpBar.localScale = Vector3.one; // Bar full
+        }
+        else
+        {
+            int prevLevelXp = GameManager.instance.GetXpToLevel(currLevel - 1);
+            int currLevelXp = GameManager.instance.GetXpToLevel(currLevel);
+
+            int diff = currLevelXp - prevLevelXp;
+            int currXpIntoLevel = GameManager.instance.experience - prevLevelXp;
+
+            float completionRatio = (float) currXpIntoLevel / (float) diff;
+            xpText.text = currXpIntoLevel.ToString() + " / " + diff;
+            xpBar.localScale = new Vector3(completionRatio, 1, 1);
+        }
     }
 }

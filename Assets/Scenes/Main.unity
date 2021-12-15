@@ -14365,8 +14365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc6322d6b24ecae5a812bef60e4f2407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 10
-  maxHitpint: 10
+  hitpoint: 5
+  maxHitpoint: 5
   pushRecoverySpeed: 0.1
 --- !u!212 &1351435145
 SpriteRenderer:
@@ -14515,7 +14515,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1431581676}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1846270845}
+        m_TargetAssemblyTypeName: CharacterMenu, Assembly-CSharp
+        m_MethodName: OnArrowClick
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1431581676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14678,7 +14690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoint: 10
-  maxHitpint: 10
+  maxHitpoint: 10
   pushRecoverySpeed: 0.2
   xpValue: 1
   triggerLength: 0.3
@@ -17061,7 +17073,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b87f1252bdb2c43b086d0a5133d6c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSprites: []
+  playerSprites:
+  - {fileID: 4018074224661003100, guid: 5642596a14091444598f64a2ad87d798, type: 3}
+  - {fileID: -4869357254534750094, guid: 5642596a14091444598f64a2ad87d798, type: 3}
   weaponSprites:
   - {fileID: -1988828135353101337, guid: 5642596a14091444598f64a2ad87d798, type: 3}
   - {fileID: 4971049064686688367, guid: 5642596a14091444598f64a2ad87d798, type: 3}
@@ -17072,9 +17086,9 @@ MonoBehaviour:
   - {fileID: -7870807981238829915, guid: 5642596a14091444598f64a2ad87d798, type: 3}
   - {fileID: -7548257428066557718, guid: 5642596a14091444598f64a2ad87d798, type: 3}
   weaponPrices: 19000000320000004b000000640000007d00000096000000c8000000
-  xpTable: 
+  xpTable: 050000000a00000011000000190000001e0000002800000037000000460000005a00000078000000
   player: {fileID: 1351435144}
-  weapon: {fileID: 0}
+  weapon: {fileID: 57456519}
   floatingTextManager: {fileID: 799420187}
   pesos: 0
   experience: 0
@@ -17699,7 +17713,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1934206472}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1846270845}
+        m_TargetAssemblyTypeName: CharacterMenu, Assembly-CSharp
+        m_MethodName: OnArrowClick
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1934206472
 MonoBehaviour:
   m_ObjectHideFlags: 0
