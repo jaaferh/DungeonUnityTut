@@ -26,12 +26,12 @@ public class GameManager : MonoBehaviour
     // Resources
     public List<Sprite> playerSprites;
     public List<Sprite> weaponSprites;
-    public List<int> weaponprices;
+    public List<int> weaponPrices;
     public List<int> xpTable;
 
     // References
     public Player player;
-    // public Weapon weapon
+    public Weapon weapon;
     public FloatingTextManager floatingTextManager;
 
     // Logic
@@ -43,6 +43,23 @@ public class GameManager : MonoBehaviour
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
+    }
+
+    // Upgrade Weapon
+    public bool TryUpgradeWeapon()
+    {
+        // is the weapon max level?
+        if (weaponPrices.Count <= weapon.weaponLevel)
+            return false;
+        
+        if (pesos >= weaponPrices[weapon.weaponLevel])
+        {
+            pesos -= weaponPrices[weapon.weaponLevel];
+            weapon.UpgradeWeapon();
+            return true;
+        }
+
+        return false;
     }
 
     // Save State
@@ -60,7 +77,7 @@ public class GameManager : MonoBehaviour
         s += "0" + "|"; // preferredSkin
         s += pesos.ToString() + "|"; // pesos
         s += experience.ToString() + "|"; // experience
-        s += "1"; // weaponLevel
+        s += weapon.weaponLevel.ToString(); // weaponLevel
 
         PlayerPrefs.SetString("SaveState", s); // Saves the properties we need
     }
@@ -71,12 +88,13 @@ public class GameManager : MonoBehaviour
             return; // nothing to load
 
         string[] data = PlayerPrefs.GetString("SaveState").Split('|'); 
-        
+
         // change player skin
         pesos = int.Parse(data[1]);
         experience = int.Parse(data[2]);
-        // change weapon level
-        
+        weapon.weaponLevel = int.Parse(data[3]);
+        weapon.SetWeaponLevel(weapon.weaponLevel);
+
         Debug.Log("LoadState");
     }
 }

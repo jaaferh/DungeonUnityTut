@@ -47,15 +47,23 @@ public class CharacterMenu : MonoBehaviour
     // Weapon Upgrade
     public void OnUpgradeClick()
     {
-        
+        if (GameManager.instance.TryUpgradeWeapon())
+        {
+            UpdateMenu();
+        }
     }
 
     // Update character info
     public void UpdateMenu()
     {
         // Weapon
-        weaponSprite.sprite = GameManager.instance.weaponSprites[0];
-        upgradeCostText.text = "Not IMPLEMENTED";
+        var weaponLevel = GameManager.instance.weapon.weaponLevel;
+        var maxWeaponLvl = GameManager.instance.weapon.weaponLevel == GameManager.instance.weaponPrices.Count;
+        weaponSprite.sprite = GameManager.instance.weaponSprites[weaponLevel];
+        if (maxWeaponLvl)
+            upgradeCostText.text = "MAX";
+        else
+            upgradeCostText.text = GameManager.instance.weaponPrices[weaponLevel].ToString();
 
         // Meta
         levelText.text = "NOT IMPLEMENTED";
