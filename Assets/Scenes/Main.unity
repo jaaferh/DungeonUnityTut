@@ -234,7 +234,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   damagePoint: 1
-  pushForce: 2
+  pushForce: 4
   weaponLevel: 0
 --- !u!61 &57456520
 BoxCollider2D:
@@ -12774,6 +12774,7 @@ GameObject:
   m_Component:
   - component: {fileID: 361288255}
   - component: {fileID: 361288256}
+  - component: {fileID: 361288257}
   m_Layer: 7
   m_Name: Hitbox
   m_TagString: Untagged
@@ -12821,6 +12822,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.11944795, y: 0.15251255}
   m_EdgeRadius: 0
+--- !u!114 &361288257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361288254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e25186a6c9a224d91a0fcf4865faf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  damage: 1
+  pushForce: 2
 --- !u!1 &625838975
 GameObject:
   m_ObjectHideFlags: 0
@@ -13244,7 +13273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitpoint: 0
   maxHitpint: 10
-  pushRecoverySpeed: 0.2
+  pushRecoverySpeed: 0.1
 --- !u!212 &1351435145
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13434,8 +13463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d835e8199f8c546b11b81256439b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 3
-  maxHitpint: 3
+  hitpoint: 10
+  maxHitpint: 10
   pushRecoverySpeed: 0.2
   xpValue: 1
   triggerLength: 0.3
