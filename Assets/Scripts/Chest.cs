@@ -12,6 +12,7 @@ public class Chest : Collectable
         {
             collected = true;
             GetComponent<SpriteRenderer>().sprite = emptyChest; // get current sprite and change it to empty chest
+            GameManager.instance.pesos += pesosAmount;
             // transform.position refers to the position of this object in the gamespace
             GameManager.instance.ShowText("+" + pesosAmount + " Pesos", 25, Color.yellow, transform.position, Vector3.up * 25, 1.5f);
         }
