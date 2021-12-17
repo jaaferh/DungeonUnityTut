@@ -48,11 +48,11 @@ TagManager:
   - name: Wall
     uniqueID: 1230282233
     locked: 0
-  - name: Actor
-    uniqueID: 1624243911
-    locked: 0
   - name: Interactable
     uniqueID: 3803893559
+    locked: 0
+  - name: Actor
+    uniqueID: 1624243911
     locked: 0
   - name: Weapon
     uniqueID: 744063813
