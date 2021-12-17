@@ -16792,6 +16792,7 @@ MonoBehaviour:
   player: {fileID: 1351435144}
   weapon: {fileID: 57456519}
   floatingTextManager: {fileID: 212173742}
+  hitpointBar: {fileID: 1902849680}
   pesos: 0
   experience: 0
 --- !u!4 &1740327917
@@ -17284,7 +17285,7 @@ GameObject:
   - component: {fileID: 1902849682}
   - component: {fileID: 1902849681}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public Player player;
     public Weapon weapon;
     public FloatingTextManager floatingTextManager;
+    public RectTransform hitpointBar;
 
     // Logic
     public int pesos;
@@ -44,6 +45,13 @@ public class GameManager : MonoBehaviour
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
+    }
+
+    // Hitpoint Bar
+    public void OnHitPointChange()
+    {
+        float ratio = (float) player.hitpoint / (float) player.maxHitpoint;
+        hitpointBar.localScale = new Vector3(1, ratio, 1); // scale change on y axis;
     }
 
     // Upgrade Weapon

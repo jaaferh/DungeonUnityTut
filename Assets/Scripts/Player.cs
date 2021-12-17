@@ -14,7 +14,13 @@ public class Player : Mover
         DontDestroyOnLoad(gameObject); // Also doesn't destroy weapon since it's a child
     }
 
-    
+    protected override void ReceiveDamage(Damage dmg)
+    {
+        base.ReceiveDamage(dmg);
+        GameManager.instance.OnHitPointChange();
+    }
+
+
     private void FixedUpdate() 
     {
         float x = Input.GetAxisRaw("Horizontal");
@@ -52,5 +58,6 @@ public class Player : Mover
         if (hitpoint > maxHitpoint)
             hitpoint = maxHitpoint;
         GameManager.instance.ShowText("+" + healingAmount.ToString() + " HP", 25, Color.green, transform.position, Vector3.up * 30, 1.0f);
+        GameManager.instance.OnHitPointChange();
     }
 }
