@@ -10,6 +10,8 @@ public class Player : Mover
     {
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        DontDestroyOnLoad(gameObject); // Also doesn't destroy weapon since it's a child
     }
 
     

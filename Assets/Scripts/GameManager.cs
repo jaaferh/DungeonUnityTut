@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         // is the weapon max level?
         if (weaponPrices.Count <= weapon.weaponLevel)
             return false;
-        
+
         if (pesos >= weaponPrices[weapon.weaponLevel])
         {
             pesos -= weaponPrices[weapon.weaponLevel];
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
     {
         int currLevel = GetCurrentLevel();
         experience += xp;
-        
+
         if (currLevel < GetCurrentLevel())
             OnLevelUp();
     }
@@ -146,6 +146,6 @@ public class GameManager : MonoBehaviour
         int weaponLvl = int.Parse(data[3]);
         weapon.SetWeaponLevel(weaponLvl);
 
-        Debug.Log("LoadState");
+        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
     }
 }

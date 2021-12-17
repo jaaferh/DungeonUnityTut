@@ -76,7 +76,7 @@ public class CharacterMenu : MonoBehaviour
         int currLevel = GameManager.instance.GetCurrentLevel();
         bool maxXpLevel = currLevel == GameManager.instance.xpTable.Count;
 
-        if (maxWeaponLvl)
+        if (maxXpLevel)
         {
             xpText.text = GameManager.instance.experience.ToString() + " total experience points"; // Display total XP
             xpBar.localScale = Vector3.one; // Bar full
