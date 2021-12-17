@@ -24,10 +24,12 @@ public class GameManager : MonoBehaviour
 
     private void Awake() 
     {
-        // Destroys GameManager instance if one exists already
+        // Destroys GameManager instance and all other DontDestroyOnLoad objects if they already exist
         if (instance != null)
         {
             Destroy(gameObject);
+            Destroy(player.gameObject);
+            Destroy(floatingTextManager.gameObject);
             return;
         }
 
