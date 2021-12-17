@@ -13845,7 +13845,7 @@ GameObject:
   - component: {fileID: 921662830}
   - component: {fileID: 921662833}
   m_Layer: 7
-  m_Name: TEST_NPC
+  m_Name: IntroNPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13864,7 +13864,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0008166358, y: 0}
+  m_Offset: {x: 0.00081664324, y: -0.0004157573}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -13875,7 +13875,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.10283439, y: 0.16}
+  m_Size: {x: 0.11114988, y: 0.16748393}
   m_EdgeRadius: 0
 --- !u!212 &921662831
 SpriteRenderer:
@@ -13951,7 +13951,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 921662829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eebe6c4d2180164fa40bb5167040475, type: 3}
+  m_Script: {fileID: 11500000, guid: 7367275646dc5f34d9d65168a3086a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filter:
@@ -13968,6 +13968,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  message: Welcome to the course. Hit the boxes with the sword with SPACE.
 --- !u!1 &954008518
 GameObject:
   m_ObjectHideFlags: 0
