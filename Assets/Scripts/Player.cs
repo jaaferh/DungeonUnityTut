@@ -10,8 +10,6 @@ public class Player : Mover
     {
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-        DontDestroyOnLoad(gameObject); // Also doesn't destroy weapon since it's a child
     }
 
     protected override void ReceiveDamage(Damage dmg)
@@ -38,6 +36,7 @@ public class Player : Mover
     {
         maxHitpoint++;
         hitpoint = maxHitpoint;
+        GameManager.instance.ShowText("LV UP!", 25, Color.blue, transform.position, Vector3.up * 30, 1.5f);
     }
 
     // Call this function on load to set Level

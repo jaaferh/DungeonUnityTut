@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public Weapon weapon;
     public FloatingTextManager floatingTextManager;
     public RectTransform hitpointBar;
+    public GameObject hud;
+    public GameObject menu;
 
     // Logic
     public int pesos;
@@ -31,12 +33,14 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             Destroy(player.gameObject);
             Destroy(floatingTextManager.gameObject);
+            Destroy(hud);
+            Destroy(menu);
             return;
         }
 
         instance = this; // Sets the current instance to the first GameManager it finds in a scene
         SceneManager.sceneLoaded += LoadState; // SceneManager calls all the functions in sceneLoaded on scene change. Add LoadState() here to call it on scene change
-        DontDestroyOnLoad(gameObject); // preserves the GameManager instance on scene load (scene change)
+        SceneManager.sceneLoaded += OnSceneLoaded;
 
         // PlayerPrefs.DeleteAll(); -- deletes saved keys (could use this when you want to reset saved data)
     }
@@ -115,15 +119,16 @@ public class GameManager : MonoBehaviour
     public void OnLevelUp()
     {
         player.OnLevelUp();
+        instance.OnHitPointChange();
+    }
+
+    // On Scene Load
+    public void OnSceneLoaded(Scene s, LoadSceneMode mode)
+    {
+        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
     }
 
     // Save State
-    /*
-    Int preferredSkin
-    Int pesos
-    Int experience
-    int weaponLevel
-    */
     public void SaveState() 
     {
         string s = "";
@@ -139,6 +144,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadState(Scene s, LoadSceneMode mode)
     {
+        SceneManager.sceneLoaded -= LoadState;
+
         if (!PlayerPrefs.HasKey("SaveState"))
             return; // nothing to load
 
@@ -155,7 +162,5 @@ public class GameManager : MonoBehaviour
         // Weapon Level
         int weaponLvl = int.Parse(data[3]);
         weapon.SetWeaponLevel(weaponLvl);
-
-        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
     }
 }

@@ -10,11 +10,6 @@ public class FloatingTextManager : MonoBehaviour
 
     private List<FloatingText> floatingTexts = new List<FloatingText>();
 
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     public void Show(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         FloatingText floatingText = GetFloatingText();
