@@ -8,9 +8,11 @@ public class Portal : Collidable
     {
         if (coll.name == "Player")
         {
+            Debug.Log("Player Collide @@@@@@@@@@@@@");
             // Teleport the player
             GameManager.instance.SaveState(); // Save the game before scene change
             string sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
+            // string sceneName = sceneNames[1];
             SceneManager.LoadScene(sceneName);
         }
     }

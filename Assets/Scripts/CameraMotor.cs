@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMotor : MonoBehaviour
 {
-    public Transform lookAt; // the player
+    private Transform lookAt; // the player
     public float boundX = 0.15f;
     public float boundY = 0.05f;
 
