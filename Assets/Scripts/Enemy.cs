@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : Mover
 {
+    private AudioSource deathSfx;
+
     // Experience
     public int xpValue = 1;
 
@@ -14,11 +16,12 @@ public class Enemy : Mover
     private bool collidingWithPlayer;
     private Transform playerTransform; // movement of the player
     private Vector3 startingPosition;
+    private bool isAlive = true;
 
     // Hitbox
     public ContactFilter2D filter;
     private BoxCollider2D hitbox;
-    private Collider2D[] hits = new Collider2D[10]; // duplicate from Collidable.cs
+    private readonly Collider2D[] hits = new Collider2D[10]; // duplicate from Collidable.cs
 
 
     protected override void Start()
@@ -27,10 +30,22 @@ public class Enemy : Mover
         playerTransform = GameManager.instance.player.transform; 
         startingPosition = transform.position; // current position of this object on launch
         hitbox = transform.GetChild(0).GetComponent<BoxCollider2D>(); // gets first child which is the hitbox in this case
+        deathSfx = GetComponent<AudioSource>();
+    }
+
+    protected override void ReceiveDamage(Damage dmg)
+    {
+        if (!isAlive)
+            return;
+
+        base.ReceiveDamage(dmg);
     }
 
     private void FixedUpdate()
     {
+        if (!isAlive)
+            return;
+
         // Is the player in range?
         if (Vector3.Distance(playerTransform.position, startingPosition) < chaseLength)
         {
@@ -77,6 +92,17 @@ public class Enemy : Mover
 
     protected override void Death()
     {
+        StartCoroutine(Waiter());
+    }
+
+    private IEnumerator Waiter()
+    {
+        hitbox.enabled = false;
+        isAlive = false;
+        deathSfx.Play();
+
+        yield return new WaitForSeconds(1);
+
         Destroy(gameObject);
         GameManager.instance.GrantXp(xpValue);
         GameManager.instance.ShowText("+" + xpValue + " xp", 30, Color.magenta, transform.position, Vector3.up * 40, 1.0f);

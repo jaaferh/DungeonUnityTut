@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject hud;
     public GameObject menu;
     public Animator deathMenuAnim;
+    public GameObject audioManager;
 
     // Logic
     public int pesos;
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
             Destroy(floatingTextManager.gameObject);
             Destroy(hud);
             Destroy(menu);
+            Destroy(audioManager);
             return;
         }
 
