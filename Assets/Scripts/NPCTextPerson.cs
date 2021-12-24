@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPCTextPerson : Collidable
 {
-    public string message;
+    public string[] messages;
     public NPCDialogue npcDialogue;
 
     protected override void Start()
@@ -16,6 +16,6 @@ public class NPCTextPerson : Collidable
         var returnKey = Input.GetKeyUp(KeyCode.Return);
 
         if (!npcDialogue.active && returnKey)
-            npcDialogue.Show("Intro NPC", "Hey man check out my mixtape brah, check out my mixtape.");
+            npcDialogue.Show(this.name, messages);
     }
 }

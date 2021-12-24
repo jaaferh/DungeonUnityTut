@@ -32078,7 +32078,10 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  message: Welcome to the course. Hit the boxes with the sword with SPACE.
+  messages:
+  - Hey man, check out my mix tape brah check out my mixtape
+  - I'm tryna make it to the top man come on man hear me out for a sec man
+  - Fuckin' phoney...
   npcDialogue: {fileID: 1053966168}
 --- !u!1 &944731703
 GameObject:

@@ -9,20 +9,35 @@ public class NPCDialogue : MonoBehaviour
     public GameObject npcDialogue;
     public Text npcName;
     public Text message;
+    private string[] messages;
+    private int messageIndex;
 
     protected virtual void Update()
     {
         var returnKey = Input.GetKeyUp(KeyCode.Return);
 
         if (active && returnKey)
-            Hide();
+        {
+            bool moreMessages = messageIndex < messages.Length - 1;
+            if (moreMessages)
+            {
+                message.text = messages[messageIndex + 1];
+                messageIndex++;
+            }
+            else
+                Hide();
+        }
     }
 
-    public void Show(string name, string msg)
+    public void Show(string name, string[] msgs)
     {
-        npcName.text = name;
-        message.text = msg;
+        messages = msgs;
+        messageIndex = 0;
         active = true;
+
+        npcName.text = name;
+        message.text = msgs[0];
+
         npcDialogue.SetActive(active);
     }
 
