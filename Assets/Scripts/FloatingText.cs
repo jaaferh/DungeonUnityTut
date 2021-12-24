@@ -27,7 +27,7 @@ public class FloatingText
     {
         if (!active)
             return;
-        
+
         if(Time.time - lastShown > duration) // if duration has lasted
             Hide();
 
