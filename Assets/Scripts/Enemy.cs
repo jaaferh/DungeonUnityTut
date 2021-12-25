@@ -103,18 +103,11 @@ public class Enemy : Mover
 
     protected override void Death()
     {
-        StartCoroutine(Waiter());
-    }
-
-    private IEnumerator Waiter()
-    {
         hitbox.enabled = false;
         isAlive = false;
         deathSfx.Play();
 
-        yield return new WaitForSeconds(1);
-
-        Destroy(gameObject);
+        Destroy(gameObject, 1f); // Wait 1 sec before destroying
         GameManager.instance.GrantXp(xpValue);
         GameManager.instance.ShowText("+" + xpValue + " xp", 30, Color.magenta, transform.position, Vector3.up * 40, 1.0f);
     }
