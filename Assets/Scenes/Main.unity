@@ -834,7 +834,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 67a27acbd91d08d4eadcfb6a69ca1a6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29344,7 +29344,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 67a27acbd91d08d4eadcfb6a69ca1a6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -32866,13 +32866,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc6322d6b24ecae5a812bef60e4f2407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 5
-  maxHitpoint: 5
+  hitpoint: 50
+  maxHitpoint: 50
   pushRecoverySpeed: 0.1
   maxSpeed: 1
   xAccel: 4
   yAccel: 4
   reAccelFactor: 1
+  inDialogue: 0
 --- !u!212 &1351435145
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33605,7 +33606,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 67a27acbd91d08d4eadcfb6a69ca1a6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -44913,25 +44914,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1044491834329749320, guid: 7007a46b73532f5478bf3db7780bad1b, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1044491834602111572, guid: 7007a46b73532f5478bf3db7780bad1b, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 1044491834703001676, guid: 7007a46b73532f5478bf3db7780bad1b, type: 3}
       propertyPath: m_Name
       value: Crate
-      objectReference: {fileID: 0}
-    - target: {fileID: 1044491834703001676, guid: 7007a46b73532f5478bf3db7780bad1b, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1044491834703001676, guid: 7007a46b73532f5478bf3db7780bad1b, type: 3}
-      propertyPath: m_TagString
-      value: Fighter
       objectReference: {fileID: 0}
     - target: {fileID: 1044491834703001677, guid: 7007a46b73532f5478bf3db7780bad1b, type: 3}
       propertyPath: m_RootOrder
@@ -44976,14 +44961,6 @@ PrefabInstance:
     - target: {fileID: 1044491834703001677, guid: 7007a46b73532f5478bf3db7780bad1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1044491834703001683, guid: 7007a46b73532f5478bf3db7780bad1b, type: 3}
-      propertyPath: hitpoint
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1044491834703001683, guid: 7007a46b73532f5478bf3db7780bad1b, type: 3}
-      propertyPath: maxHitpoint
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7007a46b73532f5478bf3db7780bad1b, type: 3}

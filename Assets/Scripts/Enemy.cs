@@ -23,6 +23,9 @@ public class Enemy : Mover
     private BoxCollider2D hitbox;
     private readonly Collider2D[] hits = new Collider2D[10]; // duplicate from Collidable.cs
 
+    // Health
+    public Transform health;
+
 
     protected override void Start()
     {
@@ -39,6 +42,11 @@ public class Enemy : Mover
             return;
 
         base.ReceiveDamage(dmg);
+
+        // Change health bar
+        float ratio = (float) hitpoint / (float) maxHitpoint;
+        Debug.Log(ratio);
+        health.localScale = new Vector3(ratio, 1, 1); // scale change on y axis;
     }
 
     private void FixedUpdate()
