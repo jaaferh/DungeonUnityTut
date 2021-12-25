@@ -23,8 +23,9 @@ public class Enemy : Mover
     private BoxCollider2D hitbox;
     private readonly Collider2D[] hits = new Collider2D[10]; // duplicate from Collidable.cs
 
-    // Health
+    // References
     public Transform health;
+    public ParticleSystem bloodPart;
 
 
     protected override void Start()
@@ -45,8 +46,10 @@ public class Enemy : Mover
 
         // Change health bar
         float ratio = (float) hitpoint / (float) maxHitpoint;
-        Debug.Log(ratio);
         health.localScale = new Vector3(ratio, 1, 1); // scale change on y axis;
+
+        // Play blood particles animation
+        bloodPart.Play();
     }
 
     private void FixedUpdate()

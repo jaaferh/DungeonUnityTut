@@ -57,3 +57,6 @@ TagManager:
   - name: Weapon
     uniqueID: 744063813
     locked: 0
+  - name: Effect
+    uniqueID: 545101713
+    locked: 0
