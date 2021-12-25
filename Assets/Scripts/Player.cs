@@ -6,6 +6,7 @@ public class Player : Mover
 {
     private SpriteRenderer spriteRenderer;
     private bool isAlive = true;
+    public bool inDialogue = false;
 
     protected override void Start()
     {
@@ -34,7 +35,7 @@ public class Player : Mover
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-        if (isAlive)
+        if (isAlive && !inDialogue)
             UpdateMotor(new Vector3(x, y, 0));
     }
 
@@ -45,7 +46,7 @@ public class Player : Mover
 
     public void OnLevelUp()
     {
-        maxHitpoint++;
+        maxHitpoint += 10;
         hitpoint = maxHitpoint;
         GameManager.instance.ShowText("LV UP!", 25, Color.blue, transform.position, Vector3.up * 30, 1.5f);
     }

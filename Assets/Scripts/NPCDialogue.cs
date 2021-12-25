@@ -34,6 +34,7 @@ public class NPCDialogue : MonoBehaviour
         messages = msgs;
         messageIndex = 0;
         active = true;
+        GameManager.instance.player.inDialogue = active;
 
         npcName.text = name;
         message.text = msgs[0];
@@ -44,6 +45,7 @@ public class NPCDialogue : MonoBehaviour
     public void Hide()
     {
         active = false;
+        GameManager.instance.player.inDialogue = active;
         npcDialogue.SetActive(active);
     }
 }
