@@ -10,6 +10,7 @@ public class NPCDialogue : MonoBehaviour
 
     // References
     public GameObject npcDialogue;
+    public NPCTextPerson npcTextPerson;
     public Text npcName;
     public Text message;
     public Animator blinkAnim;
@@ -72,9 +73,12 @@ public class NPCDialogue : MonoBehaviour
             // Return answer for question
             if (dialogueArr[messageIndex].key != string.Empty)
             {
-                bool value = isQuestion ? ans1Sel.enabled : true;
-                AddToChoices(npcName.text, dialogueArr[messageIndex].key, value, isQuestion);
+                bool value = isQuestion ? ans1Sel.enabled : true; // true if not a question to indicate encounters done (if its not a question its an encounter)
+                npcTextPerson.AddToChoices(dialogueArr[messageIndex].key, value, isQuestion);
+                if (isQuestion) // return if question, since a dialogue will always follow. dont want to continue since it'll disable the NPCDialogue GO
+                    return;
             }
+
             bool moreMessages = messageIndex < dialogueArr.Length - 1; // Do more messages exist?
             if (moreMessages)
             {

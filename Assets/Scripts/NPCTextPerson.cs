@@ -32,7 +32,6 @@ public class NPCTextPerson : Collidable
     // References
     public TextAsset npcJson;
     public NPCDialogue npcDialogue;
-    public Dialogue[] dialogue;
 
     // Logic
     private DialoguesReqs[] dialoguesReqs;
@@ -41,12 +40,14 @@ public class NPCTextPerson : Collidable
 
     protected virtual void Awake()
     {
-        savePath = Application.persistentDataPath + "/" + this.name + ".json";
+        savePath = Application.persistentDataPath + "/progress.json";
     }
 
     protected override void Start()
     {
         base.Start();
+
+        npcDialogue.npcTextPerson = this;
 
         // Get NPC Dialogue from Text Asset
         var drColl = (DialogueReqColl)JSONSerializer.Deserialize(typeof(DialogueReqColl), npcJson.text);
@@ -69,32 +70,39 @@ public class NPCTextPerson : Collidable
 
     private void GetNPCDialogue()
     {
-        // bool spoken = dialoguesReqs[0].requirements["spoken"];
-        // var filtered = dialoguesReqs.Where(dr => dr.requirements.TryGetValue("spoken", out bool spoken)).First();
-        // Filter dialogue list by choicesChosen
-        var filteredDialogue = dialoguesReqs.Where(dr => {
-            bool matches = false;
+        // Prioritise DialoguesReqs by adding them to a dictionary that contains the number of matches of requirements to choicesChosen
+        Dictionary<DialoguesReqs, int> dlgReqsPriority = new Dictionary<DialoguesReqs, int>();
+        foreach (DialoguesReqs dr in dialoguesReqs)
+        {
+            bool matches = dr.requirements.Count > 0 || choicesChosen.Count > 0 ? false : true; // If requirements is empty then matches = true (check becomes redundant)
+            int matchCount = 0;
+
             foreach (var req in dr.requirements)
             {
-                choicesChosen.TryGetValue(req.Key, out bool chosenValue);
-                matches = chosenValue == req.Value;
+                bool keyExists = choicesChosen.TryGetValue(req.Key, out bool chosenValue);
+                matches = keyExists && chosenValue == req.Value;
+                if (matches)
+                    matchCount++;
             };
-            return matches;                
-        }).First();
 
-        npcDialogue.Show(this.name, filteredDialogue.dialogues);
+            if (matches) // only add matches to dictionary
+                dlgReqsPriority.Add(dr, matchCount); 
+        }
+
+        var bestDialogueReqs = dlgReqsPriority.OrderByDescending(k => dlgReqsPriority[k.Key]).First().Key; // order dictionary by match count desc for highest match
+
+        npcDialogue.Show(this.name, bestDialogueReqs.dialogues);
     }
 
-    public static void AddToChoices(string npcName, string key, bool value, bool isQuestion)
+    public void AddToChoices(string key, bool value, bool isQuestion)
     {
-        Debug.Log(npcName);
-        Debug.Log(key);
-        Debug.Log(value);
-
         choicesChosen.Add(key, value);
         
         // Save Choices to saved file
         string serializedChoices = JSONSerializer.Serialize(typeof(Dictionary<string, bool>), choicesChosen);
-        File.WriteAllText(Application.persistentDataPath + "/" + npcName + ".json", serializedChoices);
+        File.WriteAllText(savePath, serializedChoices);
+
+        if (isQuestion)
+            GetNPCDialogue();
     }
 }

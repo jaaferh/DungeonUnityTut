@@ -21,21 +21,45 @@
         {
           "isQuestion": true,
           "dialogue": "So are you gonna try it or what?",
-          "key": "mixtape",
+          "key": "IntroNPC_mixtape",
           "answer1": "Uhh.. Yeah sure, pass it over.",
           "answer2": "No thanks."
-        },
+        }
+      ],
+      "requirements":
+      {
+      }
+    },
+    {
+      "dialogues":
+      [
         {
           "isQuestion": false,
-          "dialogue": "Fuckin' phoney...",
-          "key": "encounter1",
+          "dialogue": "Woah! Sick duuuude, enjoy it brah, skrrt pap pop pow!",
+          "key": "IntroNPC_encounter1",
           "answer1": "",
           "answer2": ""
         }
       ],
       "requirements":
       {
-        "encounter1": false
+        "IntroNPC_mixtape": true
+      }
+    },
+    {
+      "dialogues":
+      [
+        {
+          "isQuestion": false,
+          "dialogue": "Fuck outta here then. kmt",
+          "key": "IntroNPC_encounter1",
+          "answer1": "",
+          "answer2": ""
+        }
+      ],
+      "requirements":
+      {
+        "IntroNPC_mixtape": false
       }
     },
     {
@@ -51,8 +75,8 @@
       ],
       "requirements":
       {
-        "encounter1": true,
-        "mixtape": false
+        "IntroNPC_encounter1": true,
+        "IntroNPC_mixtape": false
       }
     },
     {
@@ -68,8 +92,8 @@
       ],
       "requirements":
       {
-        "encounter1": true,
-        "mixtape": true
+        "IntroNPC_encounter1": true,
+        "IntroNPC_mixtape": true
       }
     }
   ]
