@@ -5,10 +5,16 @@ using UnityEngine;
 public class NPCTextPerson : Collidable
 {
     [System.Serializable]
+    public struct DialogueReqColl
+    {
+        public DialoguesReqs[] dialogueReqColl;
+    }
+
+    [System.Serializable]
     public struct DialoguesReqs
     {
         public Dialogue[] dialogues;
-        // public Dictionary<string, bool> requirements;
+        public Dictionary<string, bool> requirements;
     }
 
     [System.Serializable]
@@ -29,13 +35,7 @@ public class NPCTextPerson : Collidable
     {
         base.Start();
 
-        DialoguesReqs dlgReqJson = JsonUtility.FromJson<DialoguesReqs>(npcJson.text);
-        Debug.Log(dlgReqJson);
-
-        // foreach (Dialogue dlgReq in dlgReqJson.dialogues)
-        // {
-        //     Debug.Log(dlgReq.dialogue);
-        // }
+        var dlgReqJson2 = JSONSerializer.Deserialize(typeof(DialogueReqColl), npcJson.text);
     }
     protected override void OnCollide(Collider2D coll)
     {
