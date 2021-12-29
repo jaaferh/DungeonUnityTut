@@ -32234,29 +32234,30 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  npcJson: {fileID: 4900000, guid: bb6588d4ed517a4488ef5ea13ac29f49, type: 3}
+  npcDialogue: {fileID: 1053966168}
   dialogue:
   - isQuestion: 0
     dialogue: Hey man, check out my mix tape brah check out my mixtape
+    key: 
     answer1: 
     answer2: 
   - isQuestion: 0
     dialogue: I'm tryna make it to the top man come on man hear me out for a sec
       man
+    key: 
     answer1: 
     answer2: 
   - isQuestion: 1
     dialogue: So are you gonna try it or what?
+    key: 
     answer1: Uhh.. Yeah sure, pass it over.
     answer2: No thanks.
   - isQuestion: 0
     dialogue: Fuckin' phoney...
+    key: 
     answer1: 
     answer2: 
-  messages:
-  - Hey man, check out my mix tape brah check out my mixtape
-  - I'm tryna make it to the top man come on man hear me out for a sec man
-  - Fuckin' phoney...
-  npcDialogue: {fileID: 1053966168}
 --- !u!1 &944731703
 GameObject:
   m_ObjectHideFlags: 0

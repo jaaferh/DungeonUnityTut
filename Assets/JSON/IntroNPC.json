@@ -7,32 +7,35 @@
         {
           "isQuestion": false,
           "dialogue": "Hey man, check out my mix tape brah check out my mixtape",
+          "key": "",
           "answer1": "",
           "answer2": ""
         },
         {
           "isQuestion": false,
           "dialogue": "I'm tryna make it to the top man come on man hear me out for a sec man",
+          "key": "",
           "answer1": "",
           "answer2": ""
         },
         {
           "isQuestion": true,
           "dialogue": "So are you gonna try it or what?",
+          "key": "mixtape",
           "answer1": "Uhh.. Yeah sure, pass it over.",
           "answer2": "No thanks."
         },
         {
           "isQuestion": false,
           "dialogue": "Fuckin' phoney...",
+          "key": "encounter1",
           "answer1": "",
           "answer2": ""
         }
       ],
       "requirements":
       {
-        "spoken": true,
-        "mixtape": false
+        "encounter1": false
       }
     },
     {
@@ -41,13 +44,32 @@
         {
           "isQuestion": false,
           "dialogue": "I hate you.",
+          "key": "",
           "answer1": "",
           "answer2": ""
         }
       ],
       "requirements":
       {
-        "hatesYou": true
+        "encounter1": true,
+        "mixtape": false
+      }
+    },
+    {
+      "dialogues":
+      [
+        {
+          "isQuestion": false,
+          "dialogue": "So you like the mixtape huh? It's the best thing since sliced bread, you feel me.",
+          "key": "",
+          "answer1": "",
+          "answer2": ""
+        }
+      ],
+      "requirements":
+      {
+        "encounter1": true,
+        "mixtape": true
       }
     }
   ]

@@ -70,10 +70,10 @@ public class NPCDialogue : MonoBehaviour
         if (messageDone)
         {
             // Return answer for question
-            if (isQuestion)
+            if (dialogueArr[messageIndex].key != string.Empty)
             {
-                int choice = ans1Sel.enabled ? 1 : 2;
-                Debug.Log(choice);
+                bool value = isQuestion ? ans1Sel.enabled : true;
+                AddToChoices(npcName.text, dialogueArr[messageIndex].key, value, isQuestion);
             }
             bool moreMessages = messageIndex < dialogueArr.Length - 1; // Do more messages exist?
             if (moreMessages)
