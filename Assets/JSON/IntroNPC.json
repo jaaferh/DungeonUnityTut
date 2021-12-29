@@ -1,7 +1,60 @@
 {
-  "IntroNPC": [
+  "dialoguesReqs": [
     {
-      "Dialogue": [
+      "dialogues": [
+        {
+          "isQuestion": false,
+          "dialogue": "Hey man, check out my mix tape brah check out my mixtape",
+          "answer1": "",
+          "answer2": ""
+        }
+      ],
+      "requirements": [
+        {
+
+        }
+      ]
+    },
+    {
+      "dialogues": [
+        {
+          "isQuestion": false,
+          "dialogue": "I'm tryna make it to the top man come on man hear me out for a sec man",
+          "answer1": "",
+          "answer2": ""
+        }
+      ],
+      "requirements": [
+        {
+          
+        }
+      ]
+    },
+    {
+      "dialogues": [
+        {
+          "isQuestion": true,
+          "dialogue": "So are you gonna try it or what?",
+          "answer1": "Uhh.. Yeah sure, pass it over.",
+          "answer2": "No thanks."
+        }
+      ],
+      "requirements": [
+        {
+          
+        }
+      ]
+    },
+    {
+      "dialogues": [
+        {
+          "isQuestion": false,
+          "dialogue": "Fuckin' phoney...",
+          "answer1": "",
+          "answer2": ""
+        }
+      ],
+      "requirements": [
         {
           
         }
