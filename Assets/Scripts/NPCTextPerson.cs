@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class NPCTextPerson : Collidable
 {
+    [System.Serializable]
+    public struct Dialogue
+    {
+        public bool isQuestion;
+        public string dialogue;
+        public string answer1;
+        public string answer2;
+    }
+
+    public Dialogue[] dialogue;
     public string[] messages;
     public NPCDialogue npcDialogue;
 
@@ -16,6 +26,6 @@ public class NPCTextPerson : Collidable
         var returnKey = Input.GetKeyUp(KeyCode.Return);
 
         if (!npcDialogue.active && returnKey)
-            npcDialogue.Show(this.name, messages);
+            npcDialogue.Show(this.name, dialogue);
     }
 }
