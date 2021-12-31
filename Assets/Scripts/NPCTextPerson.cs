@@ -70,6 +70,7 @@ public class NPCTextPerson : Collidable
 
     private void GetNPCDialogue()
     {
+        // This is extremely scuffed but it works
         // Prioritise DialoguesReqs by adding them to a dictionary that contains the number of matches of requirements to choicesChosen
         Dictionary<DialoguesReqs, int> dlgReqsPriority = new Dictionary<DialoguesReqs, int>();
         foreach (DialoguesReqs dr in dialoguesReqs)

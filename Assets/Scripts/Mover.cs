@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Mover : Fighter
 {
+    public Animator animator;
     protected BoxCollider2D boxCollider;
     protected Vector3 moveDelta;
     protected RaycastHit2D hit;
@@ -24,6 +25,10 @@ public abstract class Mover : Fighter
     protected virtual void UpdateMotor(Vector3 input)
     {
         CalculateSpeed(input);
+
+        // Set walking animation triggers
+        animator.SetFloat("xSpeed", Mathf.Abs(xSpeed));
+        animator.SetFloat("ySpeed", Mathf.Abs(ySpeed));
 
         // Reset moveDelta
         moveDelta = new Vector3(xSpeed, ySpeed, 0);

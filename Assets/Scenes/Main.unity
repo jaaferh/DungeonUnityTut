@@ -32236,28 +32236,6 @@ MonoBehaviour:
     maxNormalAngle: 0
   npcJson: {fileID: 4900000, guid: bb6588d4ed517a4488ef5ea13ac29f49, type: 3}
   npcDialogue: {fileID: 1053966168}
-  dialogue:
-  - isQuestion: 0
-    dialogue: Hey man, check out my mix tape brah check out my mixtape
-    key: 
-    answer1: 
-    answer2: 
-  - isQuestion: 0
-    dialogue: I'm tryna make it to the top man come on man hear me out for a sec
-      man
-    key: 
-    answer1: 
-    answer2: 
-  - isQuestion: 1
-    dialogue: So are you gonna try it or what?
-    key: 
-    answer1: Uhh.. Yeah sure, pass it over.
-    answer2: No thanks.
-  - isQuestion: 0
-    dialogue: Fuckin' phoney...
-    key: 
-    answer1: 
-    answer2: 
 --- !u!1 &944731703
 GameObject:
   m_ObjectHideFlags: 0
@@ -32601,6 +32579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcDialogue: {fileID: 1053966167}
+  npcTextPerson: {fileID: 0}
   npcName: {fileID: 944731706}
   message: {fileID: 1250481383}
   blinkAnim: {fileID: 1624471025}
@@ -33081,6 +33060,7 @@ GameObject:
   - component: {fileID: 1351435144}
   - component: {fileID: 1351435143}
   - component: {fileID: 1351435147}
+  - component: {fileID: 1351435148}
   m_Layer: 7
   m_Name: Player
   m_TagString: Fighter
@@ -33129,6 +33109,7 @@ MonoBehaviour:
   hitpoint: 50
   maxHitpoint: 50
   pushRecoverySpeed: 0.1
+  animator: {fileID: 1351435148}
   maxSpeed: 1
   xAccel: 4
   yAccel: 4
@@ -33212,6 +33193,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f3d7129458e7549baa69874478b1ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1351435148
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351435142}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3a7897f3e66a9ee4cad7531654c659ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1385222536
 GameObject:
   m_ObjectHideFlags: 0
