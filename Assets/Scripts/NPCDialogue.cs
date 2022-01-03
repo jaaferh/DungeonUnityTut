@@ -56,6 +56,9 @@ public class NPCDialogue : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (dialogueArr == null)
+            return;
+
         bool isQuestion = dialogueArr[messageIndex].isQuestion;
 
         // Check up/down keys presses for question selection
