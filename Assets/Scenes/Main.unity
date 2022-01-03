@@ -31642,6 +31642,7 @@ MonoBehaviour:
   director: {fileID: 1748800000}
   mainCam: {fileID: 1853929756}
   cutsceneCam: {fileID: 1348325579}
+  hud: {fileID: 1944866431}
 --- !u!61 &558633177
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44258,6 +44259,8 @@ PlayableDirector:
     value: {fileID: 1053966173}
   - key: {fileID: 1816390872240339493, guid: 79893cc7becd4d0478aeb8c3c0a39081, type: 2}
     value: {fileID: 1053966167}
+  - key: {fileID: -1834574219189493384, guid: 79893cc7becd4d0478aeb8c3c0a39081, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1748800001

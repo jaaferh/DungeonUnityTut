@@ -88,12 +88,107 @@
           "key": "",
           "answer1": "",
           "answer2": ""
+        },
+        {
+          "isQuestion": false,
+          "dialogue": "My mum actually wanted to feature in one of my tracks but I had to deny.",
+          "key": "",
+          "answer1": "",
+          "answer2": ""
+        },
+        {
+          "isQuestion": false,
+          "dialogue": "But it is what it is, sometimes you just have to feel shit for what it is, yknaameen?",
+          "key": "",
+          "answer1": "",
+          "answer2": ""
+        },
+        {
+          "isQuestion": true,
+          "dialogue": "Yknaameen or not?",
+          "key": "IntroNPC_yknaameen",
+          "answer1": "Yeah bro I knaameen.",
+          "answer2": "N-not really..."
         }
       ],
       "requirements":
       {
         "IntroNPC_encounter1": true,
         "IntroNPC_mixtape": true
+      }
+    },
+    {
+      "dialogues":
+      [
+        {
+          "isQuestion": false,
+          "dialogue": "Yeah bro it be like that don't it.",
+          "key": "IntroNPC_encounter2",
+          "answer1": "",
+          "answer2": ""
+        }
+      ],
+      "requirements":
+      {
+        "IntroNPC_encounter1": true,
+        "IntroNPC_mixtape": true,
+        "IntroNPC_yknaameen": true
+      }
+    },
+    {
+      "dialogues":
+      [
+        {
+          "isQuestion": false,
+          "dialogue": "Enjoy the mixtape, brah.",
+          "key": "",
+          "answer1": "",
+          "answer2": ""
+        }
+      ],
+      "requirements":
+      {
+        "IntroNPC_encounter1": true,
+        "IntroNPC_mixtape": true,
+        "IntroNPC_yknaameen": true,
+        "IntroNPC_encounter2": true
+      }
+    },
+    {
+      "dialogues":
+      [
+        {
+          "isQuestion": false,
+          "dialogue": "Bruh moment.",
+          "key": "IntroNPC_encounter2",
+          "answer1": "",
+          "answer2": ""
+        }
+      ],
+      "requirements":
+      {
+        "IntroNPC_encounter1": true,
+        "IntroNPC_mixtape": true,
+        "IntroNPC_yknaameen": false
+      }
+    },
+    {
+      "dialogues":
+      [
+        {
+          "isQuestion": false,
+          "dialogue": "If you don't knaameen you don't knaameen. Now fuggattahere",
+          "key": "",
+          "answer1": "",
+          "answer2": ""
+        }
+      ],
+      "requirements":
+      {
+        "IntroNPC_encounter1": true,
+        "IntroNPC_mixtape": true,
+        "IntroNPC_yknaameen": false,
+        "IntroNPC_encounter2": true
       }
     }
   ]

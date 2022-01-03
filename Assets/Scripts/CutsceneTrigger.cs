@@ -8,23 +8,13 @@ public class CutsceneTrigger : Collidable
     public PlayableDirector director;
     public Camera mainCam;
     public Camera cutsceneCam;
+    public GameObject hud;
 
     private void Awake() 
     {
         director.stopped += StopCutscene;
     }
 
-    // private float timeStarted;
-
-    // protected override void Update() 
-    // {
-    //     base.Update();
-    //     Debug.Log(timeStarted);
-    //     Debug.Log(Time.time);
-    //     if (Time.time - timeStarted > director.duration)
-    //         StopCutscene();
-         
-    // }
     protected override void OnCollide(Collider2D coll)
     {
         if (coll.name == "Player")
@@ -33,11 +23,8 @@ public class CutsceneTrigger : Collidable
             director.Play();
             mainCam.enabled = false;
             cutsceneCam.enabled = true;
+            hud.SetActive(false);
             Destroy(this);
-
-            // timeStarted = Time.time;
-
-            // Invoke(nameof(StopCutscene), 5.5f);
         }
     }
 
@@ -46,7 +33,7 @@ public class CutsceneTrigger : Collidable
         cutsceneCam.enabled = false;
         mainCam.enabled = true;
         GameManager.instance.player.inDialogue = false;
+        hud.SetActive(true);
         director.Stop();
-        Debug.Log("test");
     }
 }
