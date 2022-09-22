@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
     public GameObject menu;
     public Animator deathMenuAnim;
     public GameObject audioManager;
+    public GameObject controls;
+    public string dialogueSavePath;
 
     // Logic
     public int pesos;
@@ -29,6 +32,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake() 
     {
+        dialogueSavePath = Application.persistentDataPath + "/progress.json";
+
         // Destroys GameManager instance and all other DontDestroyOnLoad objects if they already exist
         if (instance != null)
         {
@@ -173,5 +178,11 @@ public class GameManager : MonoBehaviour
         // Weapon Level
         int weaponLvl = int.Parse(data[3]);
         weapon.SetWeaponLevel(weaponLvl);
+    }
+
+    public void ResetDialogueSave()
+    {
+        File.WriteAllText(dialogueSavePath, "{ }");
+        Respawn();
     }
 }

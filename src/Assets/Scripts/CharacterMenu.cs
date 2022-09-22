@@ -54,6 +54,11 @@ public class CharacterMenu : MonoBehaviour
         }
     }
 
+    public void OnResetSaveClick()
+    {
+        GameManager.instance.ResetDialogueSave();
+    }
+
     // Update character info
     public void UpdateMenu()
     {

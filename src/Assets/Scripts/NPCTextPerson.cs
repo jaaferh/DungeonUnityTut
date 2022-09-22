@@ -38,14 +38,11 @@ public class NPCTextPerson : Collidable
     private static Dictionary<string, bool> choicesChosen = new Dictionary<string, bool>();
     private string savePath; 
 
-    protected virtual void Awake()
-    {
-        savePath = Application.persistentDataPath + "/progress.json";
-    }
-
     protected override void Start()
     {
         base.Start();
+
+        savePath = GameManager.instance.dialogueSavePath;
 
         npcDialogue.npcTextPerson = this;
 
