@@ -8,7 +8,6 @@ public class CutsceneTrigger : Collidable
     public PlayableDirector director;
     public Camera mainCam;
     public Camera cutsceneCam;
-    public GameObject hud;
 
     private void Awake() 
     {
@@ -23,7 +22,7 @@ public class CutsceneTrigger : Collidable
             director.Play();
             mainCam.enabled = false;
             cutsceneCam.enabled = true;
-            hud.SetActive(false);
+            GameManager.instance.hud.SetActive(false);
             Destroy(this);
         }
     }
@@ -33,7 +32,7 @@ public class CutsceneTrigger : Collidable
         cutsceneCam.enabled = false;
         mainCam.enabled = true;
         GameManager.instance.player.inDialogue = false;
-        hud.SetActive(true);
+        GameManager.instance.hud.SetActive(true);
         director.Stop();
     }
 }
