@@ -53,6 +53,11 @@ public class GameManager : MonoBehaviour
         // PlayerPrefs.DeleteAll(); -- deletes saved keys (could use this when you want to reset saved data)
     }
 
+    private void Start()
+    {
+        controls.SetActive(true);
+    }
+
     // Floating Text
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {

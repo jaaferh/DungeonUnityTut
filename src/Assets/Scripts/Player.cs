@@ -35,6 +35,10 @@ public class Player : Mover
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
+        var controlsActive = GameManager.instance.controls.activeSelf;
+        if (controlsActive && (x != 0 || y != 0))
+            GameManager.instance.controls.SetActive(false);
+
         if (isAlive && !inDialogue)
             UpdateMotor(new Vector3(x, y, 0));
     }
