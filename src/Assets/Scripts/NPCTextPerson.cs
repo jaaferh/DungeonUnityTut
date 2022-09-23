@@ -94,7 +94,8 @@ public class NPCTextPerson : Collidable
 
     public void AddToChoices(string key, bool value, bool isQuestion)
     {
-        choicesChosen.Add(key, value);
+        if (!choicesChosen.ContainsKey(key))
+            choicesChosen.Add(key, value);
         
         // Save Choices to saved file
         string serializedChoices = JSONSerializer.Serialize(typeof(Dictionary<string, bool>), choicesChosen);

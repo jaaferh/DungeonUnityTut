@@ -1,0 +1,211 @@
+{
+    "dialogueReqColl":
+    [
+        {
+            "dialogues":
+            [
+              {
+                "isQuestion": false,
+                "dialogue": "Hello there!",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": false,
+                "dialogue": "Fancy getting yourself fitted for a fine suit?",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": false,
+                "dialogue": "I may not look it, but there isn't anyone here who can tailor better than I can! Partly because I killed them all...",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": true,
+                "dialogue": "So would you like a suit or what?",
+                "key": "IntroNPC_suit",
+                "answer1": "Uhh.. Yeah sure.",
+                "answer2": "No thanks."
+              }
+            ],
+            "requirements":
+            {
+            }
+        },
+        {
+            "dialogues":
+            [
+              {
+                "isQuestion": false,
+                "dialogue": "Great, I'll just need to make sure if you've got the Pesos for these magnificent hands.",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": false,
+                "dialogue": "You'll have to forgive me for my lack of tact, but times are hard, what with the recession and all.",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": true,
+                "dialogue": "It's gonna cost you 1000.",
+                "key": "IntroNPC_1000",
+                "answer1": "I've got 1000.",
+                "answer2": "Nah man, I'm broke."
+              }
+            ],
+            "requirements":
+            {
+                "IntroNPC_suit": true
+            }
+        },
+        {
+            "dialogues":
+            [
+              {
+                "isQuestion": false,
+                "dialogue": "... You don't want a suit?",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": false,
+                "dialogue": "Well, why don't you want a suit? I'm telling you, if these hands aren't weaving, they're strangling.",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": true,
+                "dialogue": "Hm? I can demonstrate if you'd like?",
+                "key": "IntroNPC_suitchance",
+                "answer1": "... Fine, I'll take a suit",
+                "answer2": "I just don't want a suit, man."
+              }
+            ],
+            "requirements":
+            {
+                "IntroNPC_suit": false
+            }
+        },
+        {
+            "dialogues":
+            [
+              {
+                "isQuestion": false,
+                "dialogue": "That's what I like to hear! Step over here will you kind sir? I need to get a good look at you.",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": false,
+                "dialogue": "Mmm, yes. Shoulders, two arms and two legs. Lucky you!",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": false,
+                "dialogue": "Ah... I'm afraid I'm missing the materials I need... Give me a second while I think about this.",
+                "key": "IntroNPC_encounter1",
+                "answer1": "",
+                "answer2": ""
+              }
+            ],
+            "requirements":
+            {
+                "IntroNPC_suit": true,
+                "IntroNPC_1000": true
+            }
+        },
+        {
+            "dialogues":
+            [
+              {
+                "isQuestion": false,
+                "dialogue": "But you'll get hold of something soon, right? Look I can even finance you.",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": false,
+                "dialogue": "Think of it as an investment in yourself...",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": false,
+                "dialogue": "What do you say, deal or no deal? Take your time, come back to me when you've made up your mind",
+                "key": "IntroNPC_encounter1",
+                "answer1": "",
+                "answer2": ""
+              }
+            ],
+            "requirements":
+            {
+                "IntroNPC_suit": true,
+                "IntroNPC_1000": false
+            }
+        },
+        {
+            "dialogues":
+            [
+              {
+                "isQuestion": false,
+                "dialogue": "There you go, all it took was a bit of encouragement, eh?",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": false,
+                "dialogue": "Trust me. Better be clothed and broke than to be limping and bare. Ha ha!",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": false,
+                "dialogue": "I'll whip something up for you before you change your mind again. Wouldn't want that now would we?",
+                "key": "IntroNPC_encounter1",
+                "answer1": "",
+                "answer2": ""
+              }
+            ],
+            "requirements":
+            {
+                "IntroNPC_suit": false,
+                "IntroNPC_suitchance": true
+            }
+        },
+        {
+            "dialogues":
+            [
+              {
+                "isQuestion": false,
+                "dialogue": "I'll be seeing you.",
+                "key": "IntroNPC_encounter1",
+                "answer1": "",
+                "answer2": ""
+              }
+            ],
+            "requirements":
+            {
+                "IntroNPC_suit": false,
+                "IntroNPC_suitchance": false
+            }
+        }
+    ]
+}

@@ -32724,7 +32724,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  npcJson: {fileID: 4900000, guid: bb6588d4ed517a4488ef5ea13ac29f49, type: 3}
+  npcJson: {fileID: 4900000, guid: d87b1001928063942a5155331a5b991a, type: 3}
   npcDialogue: {fileID: 1053966168}
 --- !u!95 &921662834
 Animator:
@@ -33235,7 +33235,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Where the boody at?
+            m_StringArgument: Now where'd he run off to?
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 944731706}
@@ -33261,7 +33261,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Must have been the wind...
+            m_StringArgument: Quick little rat
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 944731706}
