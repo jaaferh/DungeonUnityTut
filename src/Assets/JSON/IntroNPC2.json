@@ -13,14 +13,14 @@
               },
               {
                 "isQuestion": false,
-                "dialogue": "Fancy getting yourself fitted for a fine suit?",
+                "dialogue": "Fancy getting yourself measured for a tailored suit?",
                 "key": "",
                 "answer1": "",
                 "answer2": ""
               },
               {
                 "isQuestion": false,
-                "dialogue": "I may not look it, but there isn't anyone here who can tailor better than I can! Partly because I killed them all...",
+                "dialogue": "I may not look like it, but there ain't nobody around that can tailor like I can! Partly because they're all dead...",
                 "key": "",
                 "answer1": "",
                 "answer2": ""
@@ -79,7 +79,7 @@
               },
               {
                 "isQuestion": false,
-                "dialogue": "Well, why don't you want a suit? I'm telling you, if these hands aren't weaving, they're strangling.",
+                "dialogue": "Well, why don't you want a suit? I'm telling you, if these hands aren't weaving, they'd be butchering instead.",
                 "key": "",
                 "answer1": "",
                 "answer2": ""
@@ -88,7 +88,7 @@
                 "isQuestion": true,
                 "dialogue": "Hm? I can demonstrate if you'd like?",
                 "key": "IntroNPC_suitchance",
-                "answer1": "... Fine, I'll take a suit",
+                "answer1": "...Fine, I'll take a suit",
                 "answer2": "I just don't want a suit, man."
               }
             ],
@@ -109,7 +109,7 @@
               },
               {
                 "isQuestion": false,
-                "dialogue": "Mmm, yes. Shoulders, two arms and two legs. Lucky you!",
+                "dialogue": "Mmm, yes. Shoulders, two arms and both legs. Lucky you!",
                 "key": "",
                 "answer1": "",
                 "answer2": ""
@@ -196,7 +196,7 @@
               {
                 "isQuestion": false,
                 "dialogue": "I'll be seeing you.",
-                "key": "IntroNPC_encounter1",
+                "key": "",
                 "answer1": "",
                 "answer2": ""
               }
@@ -206,6 +206,126 @@
                 "IntroNPC_suit": false,
                 "IntroNPC_suitchance": false
             }
-        }
+        },
+        {
+            "dialogues":
+            [
+              {
+                "isQuestion": false,
+                "dialogue": "Alright... So I managed to find some err.. leather, so to speak.",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": false,
+                "dialogue": "You wouldn't mind a leather suit would you? Skin coloured? It's the latest trend!",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": false,
+                "dialogue": "In any case, I'll start working on it. Maybe these bits of bone might help with the sewing.",
+                "key": "IntroNPC_encounter2",
+                "answer1": "",
+                "answer2": ""
+              }
+            ],
+            "requirements":
+            {
+              "IntroNPC_suit": true,
+              "IntroNPC_1000": true,
+              "IntroNPC_encounter1": true
+            }
+        },
+        {
+            "dialogues":
+            [
+              {
+                "isQuestion": true,
+                "dialogue": "So? Have you come to a decision?",
+                "key": "",
+                "answer1": "I'll be right back!",
+                "answer2": "*Run away*"
+              }
+            ],
+            "requirements":
+            {
+              "IntroNPC_suit": true,
+              "IntroNPC_1000": false,
+              "IntroNPC_encounter1": true
+            }
+        },
+        {
+            "dialogues":
+            [
+              {
+                "isQuestion": false,
+                "dialogue": "There's my favourite meat sack!",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": false,
+                "dialogue": "Say, I'm running out of materials. You've got an arm you don't need, right?",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              },
+              {
+                "isQuestion": false,
+                "dialogue": "Hey, whats with the silence? Just sit tight, I'll go grab my knife. It'll be nice and painless, I swear.",
+                "key": "IntroNPC_encounter2",
+                "answer1": "",
+                "answer2": ""
+              }
+            ],
+            "requirements":
+            {
+              "IntroNPC_suit": false,
+              "IntroNPC_suitchance": true,
+              "IntroNPC_encounter1": true
+            }
+        },
+        {
+            "dialogues":
+            [
+              {
+                "isQuestion": false,
+                "dialogue": "Now where did I put that bread knife...",
+                "key": "",
+                "answer1": "",
+                "answer2": ""
+              }
+            ],
+            "requirements":
+            {
+              "IntroNPC_suit": false,
+              "IntroNPC_suitchance": true,
+              "IntroNPC_encounter1": true,
+              "IntroNPC_encounter2": true
+            }
+        },
+        {
+          "dialogues":
+          [
+            {
+              "isQuestion": false,
+              "dialogue": "Come back in a couple of years to collect your new erm... threads? Maybe not...",
+              "key": "",
+              "answer1": "",
+              "answer2": ""
+            }
+          ],
+          "requirements":
+          {
+            "IntroNPC_suit": true,
+            "IntroNPC_1000": true,
+            "IntroNPC_encounter1": true,
+            "IntroNPC_encounter2": true
+          }
+      }
     ]
 }
